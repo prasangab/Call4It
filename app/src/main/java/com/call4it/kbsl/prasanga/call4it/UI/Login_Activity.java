@@ -67,7 +67,7 @@ public class Login_Activity extends AppCompatActivity{
         progressDialog.setIndeterminate(true);
         progressDialog.setMessage("Authenticating...");
         progressDialog.show();
-        progressDialog.getWindow().setGravity(Gravity.CENTER_HORIZONTAL);
+     
 
         String mobileNo = _mobileNumberText.getText().toString();
         String password = _passwordText.getText().toString();
