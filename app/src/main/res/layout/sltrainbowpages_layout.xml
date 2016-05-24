@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:background="#306d97"
+        android:background="#1ABC9C"
         android:layout_height="50dp"
         android:layout_gravity="bottom"
         android:orientation="horizontal">

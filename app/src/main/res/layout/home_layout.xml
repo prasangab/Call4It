@@ -2,13 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#e4e4e4"
+    android:background="#A2D9CE"
     android:orientation="vertical" >
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="100dp"
-        android:background="#306d97"
+        android:background="#1ABC9C"
         android:layout_marginBottom="12dp">
 
         <!--<ImageView-->
@@ -23,8 +23,8 @@
             android:id="@+id/call4it_icon"
             android:layout_height="60dp"
             android:gravity="center"
-            android:text="Call 4 It"
-            android:textColor="#306d97"
+            android:text="Dial 4 It"
+            android:textColor="#138D75"
             android:textSize="40sp"
             android:layout_centerInParent="true"
             android:background="@drawable/rectangleshapewhite"
@@ -45,7 +45,8 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:background="#A2D9CE">
 
         <!--<LinearLayout-->
         <!--android:layout_width="fill_parent"-->
@@ -88,7 +89,7 @@
                 android:layout_centerInParent="true"
                 android:id="@+id/slt_rainbow_pages_text"
                 android:text="SLT Rainbow Pages"
-                android:textColor="#306d97"
+                android:textColor="#138D75"
                 android:layout_height="wrap_content" />
         </RelativeLayout>
 
@@ -119,7 +120,7 @@
                 android:layout_centerInParent="true"
                 android:id="@+id/mobile_tickets_text"
                 android:text="Mobile Tickets"
-                android:textColor="#306d97"
+                android:textColor="#138D75"
                 android:layout_height="wrap_content" />
         </RelativeLayout>
 
@@ -180,7 +181,7 @@
                 android:layout_centerInParent="true"
                 android:id="@+id/accident_cover_text"
                 android:text="Accident Cover"
-                android:textColor="#306d97"
+                android:textColor="#138D75"
                 android:layout_height="wrap_content" />
         </RelativeLayout>
 
@@ -211,7 +212,7 @@
                 android:layout_centerInParent="true"
                 android:id="@+id/exide_bat_mobile_text"
                 android:text="EXIDE Bat Mobile"
-                android:textColor="#306d97"
+                android:textColor="#138D75"
                 android:layout_height="wrap_content" />
         </RelativeLayout>
 
@@ -238,7 +239,7 @@
                 android:layout_marginRight="15dp"
                 android:textSize="16sp"
                 android:id="@+id/logout_text"
-                android:textColor="#306d97">
+                android:textColor="#138D75">
             </TextView>
             <!--<ImageView-->
             <!--android:layout_height="25dp"-->
