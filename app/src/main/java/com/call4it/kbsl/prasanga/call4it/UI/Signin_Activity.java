@@ -36,14 +36,14 @@ public class Signin_Activity extends AsyncTask<String,Void,String>{
 
     @Override
     protected String doInBackground(String... arg0) {
-     //means by Get Method
+     // by Get Method
 
             try{
                 String mobileno = (String)arg0[0];
                 String password = (String)arg0[1];
                 Log.w(mobileno,"mobileno");
                 Log.w(password,"password");
-                String link = "http://10.2.3.87/mysql.php?password="+password;
+                String link = "http://10.2.3.87/mysql.php?mobileno="+mobileno;
 
                 URL url = new URL(link);
                 HttpClient client = new DefaultHttpClient();
