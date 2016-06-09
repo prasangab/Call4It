@@ -15,7 +15,7 @@
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="45dp"
-            android:background="#1ABC9C">
+            android:background="#57A6FF">
 
             <TextView
                 android:id="@+id/information_message_dialog_layout_message_header_text"
