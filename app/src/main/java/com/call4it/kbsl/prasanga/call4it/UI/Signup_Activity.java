@@ -153,7 +153,7 @@ public class Signup_Activity extends AppCompatActivity {
                 if (result.equals("success")){
                     Toast.makeText(getBaseContext(), "Inserted Successfully", Toast.LENGTH_SHORT).show();
 
-                    Intent x = new Intent(Signup_Activity.this,Main_Activity.class);
+                    Intent x = new Intent(Signup_Activity.this,Splash_Activity.class);
                     startActivity(x);
 
                     new android.os.Handler().postDelayed(

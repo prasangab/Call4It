@@ -83,6 +83,7 @@ public class Login_Activity extends AppCompatActivity {
                 // start the signup activity
                 Intent intent = new Intent(getApplicationContext(), Signup_Activity.class);
                 startActivityForResult(intent, REQUEST_SIGNUP);
+                Login_Activity.this.finish();
             }
         });
     }
@@ -171,7 +172,7 @@ public class Login_Activity extends AppCompatActivity {
                 if (result.equals(password)) {
                     Toast.makeText(getBaseContext(), "Login Successfully", Toast.LENGTH_SHORT).show();
 
-                    Intent x = new Intent(Login_Activity.this, Main_Activity.class);
+                    Intent x = new Intent(Login_Activity.this, Splash_Activity.class);
                     startActivity(x);
 
                     new android.os.Handler().postDelayed(
@@ -226,7 +227,7 @@ public class Login_Activity extends AppCompatActivity {
     }
 
     public void onLoginSuccess(){
-        Toast.makeText(getBaseContext(), "Welcome to home page", Toast.LENGTH_LONG).show();
+        //Toast.makeText(getBaseContext(), "Welcome to home page", Toast.LENGTH_LONG).show();
         _loginButton.setEnabled(true);
         finish();
     }
