@@ -50,6 +50,14 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden"></activity>
 
+        <activity android:name=".UI.MovieTickets_Activity"
+            android:clearTaskOnLaunch="true"
+            android:configChanges="orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+
         <activity android:name=".UI.BusTickets_Activity"
             android:clearTaskOnLaunch="true"
             android:configChanges="orientation"

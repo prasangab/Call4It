@@ -25,6 +25,7 @@ public class Main_Activity extends Activity implements View.OnClickListener{
 
     // activity components
     RelativeLayout sltrainbowpageslayout;
+    RelativeLayout movieticketslayout;
     RelativeLayout busticketslayout;
     RelativeLayout trainticketslayout;
     RelativeLayout slcricketticketslayout;
@@ -33,6 +34,7 @@ public class Main_Activity extends Activity implements View.OnClickListener{
     TextView logoutText;
     TextView sltrainbowpagesText;
     //TextView sltrainbowpagesIcon;
+    TextView movieticketsText;
     TextView busticketsText;
     //TextView mobileticketsIcon;
     TextView trainticketsText;
@@ -60,6 +62,7 @@ public class Main_Activity extends Activity implements View.OnClickListener{
         application = (Call4ItApplication) Main_Activity.this.getApplication();
 
         sltrainbowpageslayout = (RelativeLayout) findViewById(R.id.slt_rainbow_pages_layout);
+        movieticketslayout = (RelativeLayout) findViewById(R.id.movie_tickets_layout);
         busticketslayout = (RelativeLayout) findViewById(R.id.bus_tickets_layout);
         trainticketslayout = (RelativeLayout) findViewById(R.id.train_tickets_layout);
         slcricketticketslayout = (RelativeLayout) findViewById(R.id.slcricket_tickets_layout);
@@ -73,6 +76,9 @@ public class Main_Activity extends Activity implements View.OnClickListener{
         sltrainbowpagesText = (TextView) findViewById(R.id.slt_rainbow_pages_text);
         //sltrainbowpagesIcon.setTypeface(typeface, Typeface.BOLD);
         sltrainbowpagesText.setTypeface(typeface, Typeface.BOLD);
+
+        movieticketsText = (TextView) findViewById(R.id.movie_tickets_text);
+        movieticketsText.setTypeface(typeface, Typeface.BOLD);
 
         busticketsText = (TextView) findViewById(R.id.bus_tickets_text);
         //mobileticketsIcon = (TextView) findViewById(R.id.mobile_tickets_text);
@@ -89,10 +95,11 @@ public class Main_Activity extends Activity implements View.OnClickListener{
         //exidebatmobileIcon.setTypeface(typeface, Typeface.BOLD);
         slcricketticketsText.setTypeface(typeface, Typeface.BOLD);
 
-        call4itIcon = (TextView) findViewById(R.id.call4it_icon);
-        call4itIcon.setTypeface(typeface, Typeface.BOLD);
+        //call4itIcon = (TextView) findViewById(R.id.call4it_icon);
+        //call4itIcon.setTypeface(typeface, Typeface.BOLD);
 
         sltrainbowpageslayout.setOnClickListener(Main_Activity.this);
+        movieticketslayout.setOnClickListener(Main_Activity.this);
         busticketslayout.setOnClickListener(Main_Activity.this);
         trainticketslayout.setOnClickListener(Main_Activity.this);
         slcricketticketslayout.setOnClickListener(Main_Activity.this);
@@ -107,9 +114,12 @@ public class Main_Activity extends Activity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
 
-    if (v==sltrainbowpageslayout){
+        if (v==sltrainbowpageslayout) {
             //display rainbow pages activity
             startActivity(new Intent(Main_Activity.this, SltRainbowPages_Activity.class));
+            Main_Activity.this.finish();
+        }else if (v==movieticketslayout){
+            startActivity(new Intent(Main_Activity.this, MovieTickets_Activity.class));
             Main_Activity.this.finish();
         }else if (v==busticketslayout){
             //display mobile tickets activity
