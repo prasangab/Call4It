@@ -161,7 +161,7 @@ public class Login_Activity extends AppCompatActivity {
             protected void onPostExecute(String result) {
                 super.onPostExecute(result);
 
-                final ProgressDialog progressDialog = new ProgressDialog(Login_Activity.this, R.style.Animation_AppCompat_Dialog);
+                final ProgressDialog progressDialog = new ProgressDialog(Login_Activity.this, R.layout.progress_dialog_layout);
                 progressDialog.setIndeterminate(true);
                 progressDialog.setMessage("Authenticating...");
                 progressDialog.show();
@@ -226,7 +226,7 @@ public class Login_Activity extends AppCompatActivity {
     }
 
     public void onLoginSuccess(){
-        Toast.makeText(getBaseContext(), "Login success", Toast.LENGTH_LONG).show();
+        Toast.makeText(getBaseContext(), "Welcome to home page", Toast.LENGTH_LONG).show();
         _loginButton.setEnabled(true);
         finish();
     }

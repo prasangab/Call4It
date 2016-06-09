@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.call4it.kbsl.prasanga.call4it">
+    package="com.call4it.kbsl.prasanga.call4it"
+    android:versionCode="1"
+    android:versionName="1.0">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -40,31 +42,31 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateAlwaysHidden"></activity>
 
-        <activity android:name=".UI.ExideBatMobile_Activity"
-            android:clearTaskOnLaunch="true"
-            android:configChanges="orientation"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateAlwaysHidden"></activity>
-
-        <activity android:name=".UI.AccidentCover_Activity"
-            android:clearTaskOnLaunch="true"
-            android:configChanges="orientation"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateAlwaysHidden"></activity>
-
-        <activity android:name=".UI.MobileTickets_Activity"
-            android:clearTaskOnLaunch="true"
-            android:configChanges="orientation"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateAlwaysHidden"></activity>
-
         <activity android:name=".UI.SltRainbowPages_Activity"
+            android:clearTaskOnLaunch="true"
+            android:configChanges="orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+
+        <activity android:name=".UI.BusTickets_Activity"
+            android:clearTaskOnLaunch="true"
+            android:configChanges="orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+
+        <activity android:name=".UI.TrainTickets_Activity"
+            android:clearTaskOnLaunch="true"
+            android:configChanges="orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+
+        <activity android:name=".UI.SLCricketTickets_Activity"
             android:clearTaskOnLaunch="true"
             android:configChanges="orientation"
             android:launchMode="singleTask"

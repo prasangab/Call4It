@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,23 +25,23 @@ public class Main_Activity extends Activity implements View.OnClickListener{
 
     // activity components
     RelativeLayout sltrainbowpageslayout;
-    RelativeLayout mobileticketslayout;
-    RelativeLayout accidentcoverlayout;
-    RelativeLayout exidebatmobilelayout;
-    //Button summaryButton;
-    //Button settingsButton;
+    RelativeLayout busticketslayout;
+    RelativeLayout trainticketslayout;
+    RelativeLayout slcricketticketslayout;
     RelativeLayout logout;
     
     TextView logoutText;
     TextView sltrainbowpagesText;
     //TextView sltrainbowpagesIcon;
-    TextView mobileticketsText;
+    TextView busticketsText;
     //TextView mobileticketsIcon;
-    TextView accidentcoverText;
+    TextView trainticketsText;
     //TextView accidentcoverIcon;
-    TextView exidebatmobileText;
+    TextView slcricketticketsText;
     //TextView exidebatmobileIcon;
     TextView call4itIcon;
+
+    //ImageView trainticketIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,9 +60,9 @@ public class Main_Activity extends Activity implements View.OnClickListener{
         application = (Call4ItApplication) Main_Activity.this.getApplication();
 
         sltrainbowpageslayout = (RelativeLayout) findViewById(R.id.slt_rainbow_pages_layout);
-        mobileticketslayout = (RelativeLayout) findViewById(R.id.mobile_tickets_layout);
-        accidentcoverlayout = (RelativeLayout) findViewById(R.id.accident_cover_layout);
-        exidebatmobilelayout = (RelativeLayout) findViewById(R.id.exide_bat_mobile_layout);
+        busticketslayout = (RelativeLayout) findViewById(R.id.bus_tickets_layout);
+        trainticketslayout = (RelativeLayout) findViewById(R.id.train_tickets_layout);
+        slcricketticketslayout = (RelativeLayout) findViewById(R.id.slcricket_tickets_layout);
         logout = (RelativeLayout) findViewById(R.id.logout_layout);
 
         // set custom font
@@ -73,29 +74,31 @@ public class Main_Activity extends Activity implements View.OnClickListener{
         //sltrainbowpagesIcon.setTypeface(typeface, Typeface.BOLD);
         sltrainbowpagesText.setTypeface(typeface, Typeface.BOLD);
 
-        mobileticketsText = (TextView) findViewById(R.id.mobile_tickets_text);
+        busticketsText = (TextView) findViewById(R.id.bus_tickets_text);
         //mobileticketsIcon = (TextView) findViewById(R.id.mobile_tickets_text);
         //mobileticketsIcon.setTypeface(typeface, Typeface.BOLD);
-        mobileticketsText.setTypeface(typeface, Typeface.BOLD);
+        busticketsText.setTypeface(typeface, Typeface.BOLD);
 
-        //accidentcoverIcon = (TextView) findViewById(R.id.accident_cover_icon);
-        accidentcoverText = (TextView) findViewById(R.id.accident_cover_text);
+        //trainticketIcon = (ImageView) findViewById(R.id.train_tickets_icon);
+        trainticketsText = (TextView) findViewById(R.id.train_tickets_text);
         //accidentcoverIcon.setTypeface(typeface, Typeface.BOLD);
-        accidentcoverText.setTypeface(typeface, Typeface.BOLD);
+        trainticketsText.setTypeface(typeface, Typeface.BOLD);
 
         //exidebatmobileIcon = (TextView) findViewById(R.id.exide_bat_mobile_icon);
-        exidebatmobileText = (TextView) findViewById(R.id.exide_bat_mobile_text);
+        slcricketticketsText = (TextView) findViewById(R.id.slcricket_tickets_text);
         //exidebatmobileIcon.setTypeface(typeface, Typeface.BOLD);
-        exidebatmobileText.setTypeface(typeface, Typeface.BOLD);
+        slcricketticketsText.setTypeface(typeface, Typeface.BOLD);
 
         call4itIcon = (TextView) findViewById(R.id.call4it_icon);
         call4itIcon.setTypeface(typeface, Typeface.BOLD);
 
         sltrainbowpageslayout.setOnClickListener(Main_Activity.this);
-        mobileticketslayout.setOnClickListener(Main_Activity.this);
-        accidentcoverlayout.setOnClickListener(Main_Activity.this);
-        exidebatmobilelayout.setOnClickListener(Main_Activity.this);
+        busticketslayout.setOnClickListener(Main_Activity.this);
+        trainticketslayout.setOnClickListener(Main_Activity.this);
+        slcricketticketslayout.setOnClickListener(Main_Activity.this);
         logout.setOnClickListener(Main_Activity.this);
+
+        //trainticketIcon.setImageResource(R.drawable.AWT_Bus);
 
 
     }
@@ -104,21 +107,21 @@ public class Main_Activity extends Activity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
 
-        if (v==sltrainbowpageslayout){
+    if (v==sltrainbowpageslayout){
             //display rainbow pages activity
             startActivity(new Intent(Main_Activity.this, SltRainbowPages_Activity.class));
             Main_Activity.this.finish();
-        }else if (v==mobileticketslayout){
+        }else if (v==busticketslayout){
             //display mobile tickets activity
-            startActivity(new Intent(Main_Activity.this, MobileTickets_Activity.class));
+            startActivity(new Intent(Main_Activity.this, BusTickets_Activity.class));
             Main_Activity.this.finish();
-        }else if (v==accidentcoverlayout){
+        }else if (v==trainticketslayout){
             //display accident cover activity
-            startActivity(new Intent(Main_Activity.this, AccidentCover_Activity.class));
+            startActivity(new Intent(Main_Activity.this, TrainTickets_Activity.class));
             Main_Activity.this.finish();
-        }else if (v==exidebatmobilelayout){
+        }else if (v==slcricketticketslayout){
             //display exide bat mobile activity
-            startActivity(new Intent(Main_Activity.this, ExideBatMobile_Activity.class));
+            startActivity(new Intent(Main_Activity.this, SLCricketTickets_Activity.class));
             Main_Activity.this.finish();
         }else if (v==logout){
             displayInformationMessageDialog("Are you sure want to logout?");

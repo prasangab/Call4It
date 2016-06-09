@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#ffffff"
     android:orientation="vertical" >
 
@@ -48,8 +48,7 @@
                 android:textSize="18dp"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
-                android:text="SLT Rainbow Pages"
-                android:gravity="center_horizontal">
+                android:text="Bus Tickets">
             </TextView>
 
         </RelativeLayout>
@@ -72,6 +71,7 @@
                 android:layout_height="fill_parent"
                 android:layout_alignParentLeft="true"
                 android:background="#57A6FF">
+
             </TextView>
         </RelativeLayout>
     </RelativeLayout>
@@ -98,9 +98,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="25dp"
-                    android:text="Welcome to SLT rainbow pages"
+                    android:text="Welcome to Bus Tickets"
                     android:textColor="#4a4a4a"
-                    android:textSize="20dp">
+                    android:textSize="20dp" >
                 </TextView>
               <!--  <EditText
                     android:id="@+id/balance_query_layout_account_text"
@@ -114,7 +114,7 @@
                     android:textColor="#4a4a4a"
                     android:background="@drawable/text_filed_shape"
                     android:textSize="18dp" >
-                </EditText> -->
+                </EditText>  -->
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
@@ -153,5 +153,5 @@
             </RelativeLayout>
         </LinearLayout>
         </LinearLayout>-->
-</LinearLayout>
 
+</LinearLayout>

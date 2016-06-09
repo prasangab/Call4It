@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="fill_parent"
-        android:background="#1ABC9C"
+        android:background="#57A6FF"
         android:layout_height="50dp"
         android:layout_gravity="bottom"
         android:orientation="horizontal">
@@ -30,7 +30,7 @@
                 android:layout_width="1dp"
                 android:layout_height="fill_parent"
                 android:layout_alignParentRight="true"
-                android:background="#306d97">
+                android:background="#57A6FF">
             </TextView>
         </RelativeLayout>
 
@@ -48,7 +48,7 @@
                 android:textSize="18dp"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
-                android:text="Accident Cover">
+                android:text="Train Tickets">
             </TextView>
 
         </RelativeLayout>
@@ -70,8 +70,7 @@
                 android:layout_width="1dp"
                 android:layout_height="fill_parent"
                 android:layout_alignParentLeft="true"
-
-                android:background="#306d97">
+                android:background="#57A6FF">
             </TextView>
         </RelativeLayout>
     </RelativeLayout>
@@ -98,7 +97,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="25dp"
-                    android:text="Welcome to accident cover"
+                    android:text="Welcome to Train Tickets"
                     android:textColor="#4a4a4a"
                     android:textSize="20dp" >
                 </TextView>

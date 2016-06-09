@@ -2,13 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#A2D9CE"
+    android:background="#57A6FF"
     android:orientation="vertical" >
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="100dp"
-        android:background="#1ABC9C"
+        android:background="#57A6FF"
         android:layout_marginBottom="12dp">
 
         <!--<ImageView-->
@@ -24,7 +24,7 @@
             android:layout_height="60dp"
             android:gravity="center"
             android:text="Dial 4 It"
-            android:textColor="#138D75"
+            android:textColor="#107FFC"
             android:textSize="40sp"
             android:layout_centerInParent="true"
             android:background="@drawable/rectangleshapewhite"
@@ -46,7 +46,7 @@
         android:layout_height="fill_parent"
         android:layout_weight="1"
         android:orientation="vertical"
-        android:background="#A2D9CE">
+        android:background="#57A6FF">
 
         <!--<LinearLayout-->
         <!--android:layout_width="fill_parent"-->
@@ -70,57 +70,55 @@
             android:layout_margin="10dp"
             android:clickable="true"
             android:layout_weight="1">
-            <!--<TextView
+            <ImageView
                 android:layout_width="40dp"
                 android:id="@+id/slt_rainbow_pages_icon"
                 android:layout_height="40dp"
                 android:layout_marginLeft="20dp"
                 android:gravity="center"
-                android:text="$"
-                android:textColor="#fff"
-                android:textSize="30sp"
+                android:src="@drawable/rainbowp"
                 android:layout_alignParentLeft="true"
-                android:background="@drawable/circle_shape_blue"
-                android:layout_centerVertical="true"/> -->
+                android:background="@drawable/circle_shape_white"
+                android:layout_centerVertical="true"/>
             <TextView
                 android:layout_width="wrap_content"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:layout_marginLeft="20dp"
                 android:layout_centerInParent="true"
                 android:id="@+id/slt_rainbow_pages_text"
                 android:text="SLT Rainbow Pages"
-                android:textColor="#138D75"
+                android:textColor="#107FFC"
                 android:layout_height="wrap_content" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="fill_parent"
-            android:id="@+id/mobile_tickets_layout"
+            android:id="@+id/bus_tickets_layout"
             android:background="@drawable/app_button_selector"
             android:layout_height="fill_parent"
             android:layout_margin="10dp"
             android:clickable="true"
             android:layout_weight="1">
-          <!--  <TextView
+
+
+            <ImageView
                 android:layout_width="40dp"
                 android:id="@+id/mobile_tickets_icon"
                 android:layout_height="40dp"
                 android:layout_marginLeft="20dp"
                 android:gravity="center"
-                android:text="%"
-                android:textColor="#fff"
-                android:textSize="30sp"
+                android:src="@drawable/bus1"
                 android:layout_alignParentLeft="true"
-                android:background="@drawable/circle_shape_blue"
-                android:layout_centerVertical="true"/>  -->
+                android:background="@drawable/circle_shape_white"
+                android:layout_centerVertical="true" />
             <TextView
                 android:layout_width="wrap_content"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:layout_marginLeft="20dp"
                 android:layout_centerInParent="true"
-                android:id="@+id/mobile_tickets_text"
-                android:text="Mobile Tickets"
-                android:textColor="#138D75"
+                android:id="@+id/bus_tickets_text"
+                android:text="Bus Tickets"
+                android:textColor="#107FFC"
                 android:layout_height="wrap_content" />
         </RelativeLayout>
 
@@ -156,63 +154,59 @@
 
         <RelativeLayout
             android:layout_width="fill_parent"
-            android:id="@+id/accident_cover_layout"
+            android:id="@+id/train_tickets_layout"
             android:clickable="true"
             android:background="@drawable/app_button_selector"
             android:layout_height="fill_parent"
             android:layout_margin="10dp"
             android:layout_weight="1">
-          <!--  <TextView
+            <ImageView
                 android:layout_width="40dp"
-                android:id="@+id/accident_cover_icon"
+                android:id="@+id/train_tickets_icon"
                 android:layout_height="40dp"
                 android:layout_marginLeft="20dp"
                 android:gravity="center"
-                android:text="!"
-                android:textColor="#fff"
-                android:textSize="30sp"
+                android:src="@drawable/train"
                 android:layout_alignParentLeft="true"
-                android:background="@drawable/circle_shape_blue"
-                android:layout_centerVertical="true"/>  -->
+                android:background="@drawable/rectangleshapewhite"
+                android:layout_centerVertical="true"/>
             <TextView
                 android:layout_width="wrap_content"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:layout_marginLeft="20dp"
                 android:layout_centerInParent="true"
-                android:id="@+id/accident_cover_text"
-                android:text="Accident Cover"
-                android:textColor="#138D75"
+                android:id="@+id/train_tickets_text"
+                android:text="Train Tickets"
+                android:textColor="#107FFC"
                 android:layout_height="wrap_content" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="fill_parent"
-            android:id="@+id/exide_bat_mobile_layout"
+            android:id="@+id/slcricket_tickets_layout"
             android:clickable="true"
             android:background="@drawable/app_button_selector"
             android:layout_height="fill_parent"
             android:layout_margin="10dp"
             android:layout_weight="1">
-          <!--  <TextView
+            <ImageView
                 android:layout_width="40dp"
                 android:id="@+id/exide_bat_mobile_icon"
                 android:layout_height="40dp"
                 android:layout_marginLeft="20dp"
                 android:gravity="center"
-                android:text="#"
-                android:textColor="#fff"
-                android:textSize="30sp"
+                android:src="@drawable/cricket"
                 android:layout_alignParentLeft="true"
-                android:background="@drawable/circle_shape_blue"
-                android:layout_centerVertical="true"/>  -->
+                android:background="@drawable/circle_shape_white"
+                android:layout_centerVertical="true"/>
             <TextView
                 android:layout_width="wrap_content"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:layout_marginLeft="20dp"
                 android:layout_centerInParent="true"
-                android:id="@+id/exide_bat_mobile_text"
-                android:text="EXIDE Bat Mobile"
-                android:textColor="#138D75"
+                android:id="@+id/slcricket_tickets_text"
+                android:text="SL Cricket Tickets"
+                android:textColor="#107FFC"
                 android:layout_height="wrap_content" />
         </RelativeLayout>
 
@@ -239,7 +233,7 @@
                 android:layout_marginRight="15dp"
                 android:textSize="16sp"
                 android:id="@+id/logout_text"
-                android:textColor="#138D75">
+                android:textColor="#107FFC">
             </TextView>
             <!--<ImageView-->
             <!--android:layout_height="25dp"-->
