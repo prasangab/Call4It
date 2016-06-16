@@ -1,5 +1,6 @@
 package com.call4it.kbsl.prasanga.call4it.UI;
 
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -60,4 +61,7 @@ public class BusTickets_Activity extends Activity implements View.OnClickListene
         lineText.setTypeface(face);
 
     }
+
 }
+
+
