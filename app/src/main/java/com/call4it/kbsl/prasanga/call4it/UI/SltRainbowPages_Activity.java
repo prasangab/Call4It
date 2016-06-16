@@ -1,26 +1,36 @@
 package com.call4it.kbsl.prasanga.call4it.UI;
 
-import android.app.Activity;
+
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.call4it.kbsl.prasanga.call4it.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by root on 5/17/16.
  */
-public class SltRainbowPages_Activity extends Activity implements View.OnClickListener{
+public class SltRainbowPages_Activity extends AppCompatActivity {
 
-    RelativeLayout back;
-    RelativeLayout done;
-    TextView lineText;
+    private Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private int[] tabIcons = {
+            R.drawable.bus1,
+            R.drawable.bus1,
+    };
 
-    private static final String TAG = SltRainbowPages_Activity.class.getName();
+    private static final String TAG = BusTickets_Activity.class.getName();
 
 
     @Override
@@ -30,16 +40,6 @@ public class SltRainbowPages_Activity extends Activity implements View.OnClickLi
         init();
     }
 
-    @Override
-    public void onClick(View v) {
-        if (v==back){
-            startActivity(new Intent(SltRainbowPages_Activity.this, Main_Activity.class));
-            SltRainbowPages_Activity.this.finish();
-        }else if (v==done){
-            // implement what will happen after done...
-
-        }
-    }
 
     @Override
     public void onBackPressed() {
@@ -48,19 +48,76 @@ public class SltRainbowPages_Activity extends Activity implements View.OnClickLi
     }
 
     public void init(){
-         Typeface face = Typeface.createFromAsset(getAssets(), "fonts/vegur_2.otf");
 
-         back = (RelativeLayout) findViewById(R.id.balance_query_layout_back);
-         done = (RelativeLayout) findViewById(R.id.balance_query_layout_get_balance);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("SLT Rainbow Pages");
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayShowHomeEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SltRainbowPages_Activity.this, Main_Activity.class));
+                SltRainbowPages_Activity.this.finish();
+            }
+        });
 
-         back.setOnClickListener(SltRainbowPages_Activity.this);
-         done.setOnClickListener(SltRainbowPages_Activity.this);
 
-         // set custom font for text
-         lineText = (TextView) findViewById(R.id.balance_query_account_no);
-         lineText.setTypeface(face);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-     }
+        //viewPager = (ViewPager) findViewById(R.id.viewpager);
+        //setupViewPager(viewPager);
+
+        //tabLayout = (TabLayout) findViewById(R.id.tabs);
+        //tabLayout.setupWithViewPager(viewPager);
+        //setupTabIcons();
+
+
+
+    }
+
+    private void setupTabIcons() {
+        tabLayout.getTabAt(0).setIcon(tabIcons[0]);
+        tabLayout.getTabAt(1).setIcon(tabIcons[1]);
+
+    }
+
+
+    private void setupViewPager(ViewPager viewPager){
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new NTCFragment(), "NTC");
+        adapter.addFragment(new SLFragment(), "SuperLine");
+        viewPager.setAdapter(adapter);
+    }
+
+    class ViewPagerAdapter extends FragmentPagerAdapter {
+        private final List<Fragment> mFragmentList = new ArrayList<>();
+        private final List<String> mFragmentTitleList = new ArrayList<>();
+
+        public ViewPagerAdapter(FragmentManager manager){
+            super(manager);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return mFragmentList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return mFragmentList.size();
+        }
+
+        public void addFragment(Fragment fragment, String title){
+            mFragmentList.add(fragment);
+            mFragmentTitleList.add(title);
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return mFragmentTitleList.get(position);
+        }
+    }
 
 
 }

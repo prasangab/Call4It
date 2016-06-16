@@ -10,7 +10,8 @@
     <application
         android:name=".application.Call4ItApplication"
         android:icon="@drawable/dialog_logo"
-        android:label="Dial4it">
+        android:label="Dial4it"
+        android:theme="@style/MyMaterialTheme">
         <activity
             android:name=".UI.Login_Activity"
             android:label="Dial4It"
