@@ -5,20 +5,20 @@
     android:background="#57A6FF"
     android:orientation="vertical" >
 
-  <!--  <RelativeLayout
+  <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="100dp"
-        android:background="#57A6FF"
+        android:background="#FFFFFF"
         android:layout_marginBottom="12dp">
 
         <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/sdbl_logo"
-        android:id="@+id/mbank_icon"
+        android:src="@drawable/dialog_logo"
+        android:id="@+id/dialog_icon"
         android:layout_centerHorizontal="true"/>
 
-        <TextView
+       <!-- <TextView
             android:layout_width="200dp"
             android:id="@+id/call4it_icon"
             android:layout_height="60dp"
@@ -28,7 +28,8 @@
             android:textSize="40sp"
             android:layout_centerInParent="true"
             android:background="@drawable/rectangleshapewhite"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/dialog_icon"/>
         <TextView
         android:layout_width="wrap_content"
         android:textSize="35sp"
@@ -38,8 +39,8 @@
         android:layout_toRightOf="@+id/mbank_icon"
         android:text="MBank"
         android:textColor="#ffffff"
-        android:layout_height="wrap_content" />
-    </RelativeLayout>  -->
+        android:layout_height="wrap_content" />  -->
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
