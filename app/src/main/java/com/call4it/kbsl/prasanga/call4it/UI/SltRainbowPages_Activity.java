@@ -11,8 +11,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.webkit.WebView;
 
 import com.call4it.kbsl.prasanga.call4it.R;
+import com.call4it.kbsl.prasanga.call4it.fragments.NTCFragment;
+import com.call4it.kbsl.prasanga.call4it.fragments.SLFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,8 +39,11 @@ public class SltRainbowPages_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sltrainbowpages_layout);
-        init();
+        setContentView(R.layout.sltrpwebview_layout);
+
+        WebView slt = (WebView) findViewById(R.id.webview);
+        slt.loadUrl("http://www.rainbowpages.mobi/");
+        //init();
     }
 
 
@@ -62,16 +68,15 @@ public class SltRainbowPages_Activity extends AppCompatActivity {
             }
         });
 
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //viewPager = (ViewPager) findViewById(R.id.viewpager);
-        //setupViewPager(viewPager);
 
-        //tabLayout = (TabLayout) findViewById(R.id.tabs);
-        //tabLayout.setupWithViewPager(viewPager);
-        //setupTabIcons();
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        setupViewPager(viewPager);
 
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(viewPager);
+        setupTabIcons();
 
 
     }

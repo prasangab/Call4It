@@ -12,6 +12,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.call4it.kbsl.prasanga.call4it.R;
+import com.call4it.kbsl.prasanga.call4it.fragments.NTCFragment;
+import com.call4it.kbsl.prasanga.call4it.fragments.SLFragment;
 
 import java.util.ArrayList;
 import java.util.List;

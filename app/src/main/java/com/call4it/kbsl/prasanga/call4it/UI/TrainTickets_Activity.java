@@ -12,6 +12,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.call4it.kbsl.prasanga.call4it.R;
+import com.call4it.kbsl.prasanga.call4it.fragments.NTCFragment;
+import com.call4it.kbsl.prasanga.call4it.fragments.SLFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,7 +86,7 @@ public class TrainTickets_Activity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager){
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new NTCFragment(), "NTC");
+        //adapter.addFragment(new NTCFragment(), "NTC");
         adapter.addFragment(new SLFragment(), "SuperLine");
         viewPager.setAdapter(adapter);
     }
