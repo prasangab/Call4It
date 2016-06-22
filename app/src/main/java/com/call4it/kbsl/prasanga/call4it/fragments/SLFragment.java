@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -25,8 +27,8 @@ import java.util.Calendar;
  */
 public class SLFragment extends Fragment{
 
-    EditText _from;
-    EditText _to;
+    AutoCompleteTextView _from;
+    AutoCompleteTextView _to;
     static EditText _date;
     ImageButton _dateButton;
     Button _searchButton;
@@ -34,6 +36,8 @@ public class SLFragment extends Fragment{
     String date;
     String from;
     String to;
+
+    String[] cities = {"Maharagama", "Galle", "Matara", "Hambantota", "Kataragama", "Kandy", "Ratnapura", "Badulla"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,12 +51,18 @@ public class SLFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_ntc, container, false);
 
-        return view;
-    }
+        _from = (AutoCompleteTextView) view.findViewById(R.id.from);
+        _to = (AutoCompleteTextView) view.findViewById(R.id.to);
 
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+        //Creating the instance of ArrayAdapter containing list of language names
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_dropdown_item_1line,cities);
+        //Getting the instance of AutoCompleteTextView
+        _from.setThreshold(1);//will start working from first character
+        _from.setAdapter(adapter);//setting the adapter data into the AutoCompleteTextView
+        //_from.setTextColor(Color.RED);
+
+        _to.setThreshold(1);
+        _to.setAdapter(adapter);
 
         _dateButton = (ImageButton) view.findViewById(R.id.btn_date);
         _dateButton.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +84,15 @@ public class SLFragment extends Fragment{
                 //search();
             }
         });
+
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
     }
 
     // Search........

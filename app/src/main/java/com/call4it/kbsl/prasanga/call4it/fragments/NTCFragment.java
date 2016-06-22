@@ -2,6 +2,7 @@ package com.call4it.kbsl.prasanga.call4it.fragments;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
@@ -10,6 +11,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -29,8 +32,8 @@ import butterknife.InjectView;
  */
 public class NTCFragment extends Fragment {
 
-    EditText _from;
-    EditText _to;
+    AutoCompleteTextView _from;
+    AutoCompleteTextView _to;
     static EditText _date;
     ImageButton _dateButton;
     Button _searchButton;
@@ -38,6 +41,8 @@ public class NTCFragment extends Fragment {
     String date;
     String from;
     String to;
+
+    String[] cities = {"Maharagama", "Galle", "Matara", "Hambantota", "Kataragama", "Kandy", "Ratnapura", "Badulla"};
 
 
     // store instance variables based on arguments passed
@@ -55,12 +60,18 @@ public class NTCFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_ntc, container, false);
 
-        return view;
-    }
+        _from = (AutoCompleteTextView) view.findViewById(R.id.from);
+        _to = (AutoCompleteTextView) view.findViewById(R.id.to);
 
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+        //Creating the instance of ArrayAdapter containing list of language names
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_dropdown_item_1line,cities);
+        //Getting the instance of AutoCompleteTextView
+        _from.setThreshold(1);//will start working from first character
+        _from.setAdapter(adapter);//setting the adapter data into the AutoCompleteTextView
+        //_from.setTextColor(Color.RED);
+
+        _to.setThreshold(1);
+        _to.setAdapter(adapter);
 
         _dateButton = (ImageButton) view.findViewById(R.id.btn_date);
         _dateButton.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +93,15 @@ public class NTCFragment extends Fragment {
                 //search();
             }
         });
+
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
     }
 
     // Search........
