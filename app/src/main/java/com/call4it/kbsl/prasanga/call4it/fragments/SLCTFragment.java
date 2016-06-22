@@ -24,19 +24,17 @@ import java.util.Calendar;
 /**
  * Created by root on 6/22/16.
  */
-public class TrainFragment extends Fragment {
+public class SLCTFragment extends Fragment {
 
-    AutoCompleteTextView _from;
-    AutoCompleteTextView _to;
+    AutoCompleteTextView _stadium;
     static EditText _date;
     ImageButton _dateButton;
     Button _searchButton;
 
     String date;
-    String from;
-    String to;
+    String stadium;
 
-    String[] cities = {"Maharagama", "Galle", "Matara", "Hambantota", "Kataragama", "Kandy", "Ratnapura", "Badulla"};
+    String[] stadiums = {"Maharagama", "Galle", "Matara", "Hambantota", "Kataragama", "Kandy", "Ratnapura", "Badulla"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,20 +46,19 @@ public class TrainFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_train, container, false);
+        View view = inflater.inflate(R.layout.fragment_slct, container, false);
 
-        _from = (AutoCompleteTextView) view.findViewById(R.id.from);
-        _to = (AutoCompleteTextView) view.findViewById(R.id.to);
+        _stadium = (AutoCompleteTextView) view.findViewById(R.id.stadium);
 
         //Creating the instance of ArrayAdapter containing list of language names
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_dropdown_item_1line,cities);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_dropdown_item_1line,stadiums);
         //Getting the instance of AutoCompleteTextView
-        _from.setThreshold(1);//will start working from first character
-        _from.setAdapter(adapter);//setting the adapter data into the AutoCompleteTextView
+        _stadium.setThreshold(1);//will start working from first character
+        _stadium.setAdapter(adapter);//setting the adapter data into the AutoCompleteTextView
         //_from.setTextColor(Color.RED);
 
-        _to.setThreshold(1);
-        _to.setAdapter(adapter);
+        //_to.setThreshold(1);
+        //_to.setAdapter(adapter);
 
         _dateButton = (ImageButton) view.findViewById(R.id.btn_date);
         _dateButton.setOnClickListener(new View.OnClickListener() {
@@ -97,20 +94,20 @@ public class TrainFragment extends Fragment {
     // Search........
     public void search(){
 
-        from = _from.getText().toString();
-        to = _to.getText().toString();
+        stadium = _stadium.getText().toString();
+        //to = _to.getText().toString();
         date = _date.getText().toString();
 
     }
 
-    public static class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener{
+    public static class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
 
 
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
 
             // use the current date as the default date in the picker
-            final Calendar c= Calendar.getInstance();
+            final Calendar c = Calendar.getInstance();
             int year = c.get(Calendar.YEAR);
             int month = c.get(Calendar.MONTH);
             int day = c.get(Calendar.DAY_OF_MONTH);
@@ -123,7 +120,7 @@ public class TrainFragment extends Fragment {
         public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 
 
-            String date = year + "/" + (monthOfYear + 1) + "/" + dayOfMonth ;
+            String date = year + "/" + (monthOfYear + 1) + "/" + dayOfMonth;
             Log.d("date :", date);
             _date.setText(date);
             //Calendar c = Calendar.getInstance();
@@ -138,7 +135,5 @@ public class TrainFragment extends Fragment {
 
 
         }
-
-
     }
 }

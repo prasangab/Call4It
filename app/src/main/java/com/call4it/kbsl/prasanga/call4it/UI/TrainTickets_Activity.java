@@ -38,7 +38,7 @@ public class TrainTickets_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sltrainbowpages_layout);
+        setContentView(R.layout.traintickets_layout);
         init();
     }
 
@@ -53,7 +53,7 @@ public class TrainTickets_Activity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("SLT Rainbow Pages");
+        getSupportActionBar().setTitle("Train Tickets");
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //getSupportActionBar().setDisplayShowHomeEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -87,7 +87,6 @@ public class TrainTickets_Activity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager){
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        //adapter.addFragment(new NTCFragment(), "NTC");
         adapter.addFragment(new TrainFragment(), "Train");
         viewPager.setAdapter(adapter);
     }

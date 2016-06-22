@@ -13,6 +13,7 @@ import android.view.View;
 
 import com.call4it.kbsl.prasanga.call4it.R;
 import com.call4it.kbsl.prasanga.call4it.fragments.NTCFragment;
+import com.call4it.kbsl.prasanga.call4it.fragments.SLCTFragment;
 import com.call4it.kbsl.prasanga.call4it.fragments.SLFragment;
 
 import java.util.ArrayList;
@@ -37,7 +38,7 @@ public class SLCricketTickets_Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sltrainbowpages_layout);
+        setContentView(R.layout.slcrickettickets_layout);
         init();
     }
 
@@ -52,7 +53,7 @@ public class SLCricketTickets_Activity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("SLT Rainbow Pages");
+        getSupportActionBar().setTitle("SL Cricket Tickets");
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //getSupportActionBar().setDisplayShowHomeEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -66,8 +67,8 @@ public class SLCricketTickets_Activity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //viewPager = (ViewPager) findViewById(R.id.viewpager);
-        //setupViewPager(viewPager);
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        setupViewPager(viewPager);
 
         //tabLayout = (TabLayout) findViewById(R.id.tabs);
         //tabLayout.setupWithViewPager(viewPager);
@@ -86,8 +87,7 @@ public class SLCricketTickets_Activity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager){
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        //adapter.addFragment(new NTCFragment(), "NTC");
-        adapter.addFragment(new SLFragment(), "SuperLine");
+        adapter.addFragment(new SLCTFragment(), "SL Cricket Tickets");
         viewPager.setAdapter(adapter);
     }
 

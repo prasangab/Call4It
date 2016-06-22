@@ -24,10 +24,10 @@ import java.util.Calendar;
 /**
  * Created by root on 6/22/16.
  */
-public class TrainFragment extends Fragment {
+public class MovieFragment extends Fragment {
 
-    AutoCompleteTextView _from;
-    AutoCompleteTextView _to;
+    AutoCompleteTextView _film;
+    AutoCompleteTextView _theater;
     static EditText _date;
     ImageButton _dateButton;
     Button _searchButton;
@@ -36,7 +36,8 @@ public class TrainFragment extends Fragment {
     String from;
     String to;
 
-    String[] cities = {"Maharagama", "Galle", "Matara", "Hambantota", "Kataragama", "Kandy", "Ratnapura", "Badulla"};
+    String[] films = {"Sikuru hathe", "paththini", "Ho gana pokuna"};
+    String[] theater = {"Savoy-Wellawatta", "Liberty-Kollupitiya", "Anush-Nugegoda"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,20 +49,21 @@ public class TrainFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_train, container, false);
+        View view = inflater.inflate(R.layout.fragment_movie, container, false);
 
-        _from = (AutoCompleteTextView) view.findViewById(R.id.from);
-        _to = (AutoCompleteTextView) view.findViewById(R.id.to);
+        _film = (AutoCompleteTextView) view.findViewById(R.id.film);
+        _theater = (AutoCompleteTextView) view.findViewById(R.id.theater);
 
         //Creating the instance of ArrayAdapter containing list of language names
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_dropdown_item_1line,cities);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_dropdown_item_1line,films);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_dropdown_item_1line,theater);
         //Getting the instance of AutoCompleteTextView
-        _from.setThreshold(1);//will start working from first character
-        _from.setAdapter(adapter);//setting the adapter data into the AutoCompleteTextView
+        _film.setThreshold(1);//will start working from first character
+        _film.setAdapter(adapter1);//setting the adapter data into the AutoCompleteTextView
         //_from.setTextColor(Color.RED);
 
-        _to.setThreshold(1);
-        _to.setAdapter(adapter);
+        _theater.setThreshold(1);
+        _theater.setAdapter(adapter2);
 
         _dateButton = (ImageButton) view.findViewById(R.id.btn_date);
         _dateButton.setOnClickListener(new View.OnClickListener() {
@@ -97,8 +99,8 @@ public class TrainFragment extends Fragment {
     // Search........
     public void search(){
 
-        from = _from.getText().toString();
-        to = _to.getText().toString();
+        from = _film.getText().toString();
+        to = _theater.getText().toString();
         date = _date.getText().toString();
 
     }
