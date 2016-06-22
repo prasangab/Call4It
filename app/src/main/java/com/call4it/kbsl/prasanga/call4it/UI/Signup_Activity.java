@@ -77,7 +77,9 @@ public class Signup_Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Finish the registration screen and return to the Login activity
-                finish();
+                Intent intent = new Intent(getApplicationContext(),Login_Activity.class);
+                startActivity(intent);
+                Signup_Activity.this.finish();
             }
         });
     }
