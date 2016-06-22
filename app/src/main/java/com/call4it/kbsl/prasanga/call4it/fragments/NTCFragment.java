@@ -29,13 +29,10 @@ import butterknife.InjectView;
  */
 public class NTCFragment extends Fragment {
 
-    //@InjectView(R.id.from)
     EditText _from;
-    //@InjectView(R.id.to)
     EditText _to;
-    //@InjectView(R.id.date)
-    EditText _date;
-    //@InjectView(R.id.btn_search)
+    static EditText _date;
+    ImageButton _dateButton;
     Button _searchButton;
 
     String date;
@@ -57,7 +54,6 @@ public class NTCFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_ntc, container, false);
-        ButterKnife.inject(view);
 
         return view;
     }
@@ -66,15 +62,18 @@ public class NTCFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        _date = (EditText) view.findViewById(R.id.date);
-        _date.setOnClickListener(new View.OnClickListener() {
+        _dateButton = (ImageButton) view.findViewById(R.id.btn_date);
+        _dateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DialogFragment picker = new DatePickerFragment();
                 picker.show(getFragmentManager(), "datePicker");
+                //_date.setText(formattedDate);
 
             }
         });
+        _date = (EditText) view.findViewById(R.id.date);
+        _date.setKeyListener(null);
 
         _searchButton = (Button) view.findViewById(R.id.btn_search);
         _searchButton.setOnClickListener(new View.OnClickListener() {
@@ -115,15 +114,19 @@ public class NTCFragment extends Fragment {
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 
-            Calendar c = Calendar.getInstance();
-            c.set(year, monthOfYear, dayOfMonth);
 
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            String formattedDate = sdf.format(c.getTime());
+            String date = year + "/" + (monthOfYear + 1) + "/" + dayOfMonth ;
+            Log.d("date :", date);
+            _date.setText(date);
+            //Calendar c = Calendar.getInstance();
+            //c.set(year, monthOfYear, dayOfMonth);
 
-            Log.d("dsads", formattedDate);
-            EditText _date = (EditText) view.findViewById(R.id.date);
-            //_date.setText(year);
+            //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            //String formattedDate = sdf.format(c.getTime());
+
+            //Log.d("dsads", formattedDate);
+            //EditText _date = (EditText) view.findViewById(R.id.date);
+            //_date.setText(formattedDate);
 
 
         }

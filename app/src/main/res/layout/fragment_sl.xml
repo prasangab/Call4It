@@ -52,6 +52,11 @@
                 android:layout_height="wrap_content"
                 android:inputType="date"
                 android:hint="Date"/>
+            <ImageButton
+                android:id="@+id/btn_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/date1"/>
         </android.support.design.widget.TextInputLayout>
 
         <android.support.v7.widget.AppCompatButton
